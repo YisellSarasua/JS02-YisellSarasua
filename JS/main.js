@@ -1,6 +1,20 @@
-// 1. Identificar el boton clickeado
-//  .Identificar si es un numero o una operaciones
-//  . Permitir escribir mas de un numero
-//  . Guardar el numero
+// 1. Identificar el valor que esto clickeando
 
+const valorBoton = document.querySelectorAll ('.numero');
+
+/*valorBoton.addEventListener('click', () => {
+    console.log (valorBoton);
+
+})
+*/
+
+valorBoton.forEach(boton => {
+    console.log(valorBoton);
+
+    boton.addEventListener('click', () =>{
+        console.log(boton.innerHTML);
+
+    })
+    
+});
 
