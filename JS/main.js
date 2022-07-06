@@ -30,6 +30,7 @@ botonNumero.forEach(function (boton) {
 
     boton.addEventListener('click', function () {
         console.log(boton.innerHTML);
+        numeroIngresado (boton.innerHTML);
     })
 
 });
@@ -39,6 +40,7 @@ botonOperacion.forEach(function (boton) {
 
      boton.addEventListener('click', function () {
          console.log(boton.innerHTML);
+         numeroIngresado (boton.innerHTML);
 
          if (boton.innerHTML == "+" ){
             console.log("Sumar");
@@ -71,6 +73,21 @@ botonBorrarUno.onclick = function() {
     console.log("BorrarUno");
 };
  
+
+ //2.GUARDAR VALORES INGRESADOS 
+ // Creo una funcion que guarda el valor de los botones tipo numero ingresados, los convierte en texto y los anida como texto, ya que si sumara como numero nos daria como resultado una calculo matematico. 
+
+ function numeroIngresado (numero){
+    operacionActual = operacionActual.toString() + numero.toString();
+    console.log(operacionActual);
+    display();
+
+ }
+
+ function display(){
+    resultadoActual.innerHTML = operacionActual;
+    
+ }
 
  
 
