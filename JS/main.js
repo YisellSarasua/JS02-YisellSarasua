@@ -1,4 +1,4 @@
-// 1. LEER UN ELEMENTO DE HTML - IDENTIFICAR CUANDO DE HACE CLICK SOBRE EL MISMO  - RECONOCER SU CONTENIDO
+// 1. LEER UN ELEMENTO DE HTML - IDENTIFICAR CUANDO SE HACE CLICK SOBRE EL MISMO  - RECONOCER SU CONTENIDO
 
 //1A. Obtengo los valores signados en el html a partir de document.getElementById('nombre de id asignado a '). Creo una variable o constante y le asigno la lectura del html.
 //1B. uso .forEach para recorres los valores asignados en la variable (con el mismo id) como su fuera un array.
@@ -21,7 +21,10 @@ var resultadoActual=document.getElementById("resultadoActual");
 //Valiables para almacenar los datos
 var operacionActual = "";
 var operacionAnterior = "";
-var operacion = undefined;
+var operacion;
+let valor01;
+let valor02;
+let resultado; 
 
 
 
@@ -40,19 +43,38 @@ botonOperacion.forEach(function (boton) {
 
      boton.addEventListener('click', function () {
          console.log(boton.innerHTML);
-         numeroIngresado (boton.innerHTML);
+         
 
          if (boton.innerHTML == "+" ){
             console.log("Sumar");
+            valor01=operacionActual;
+            operacion== '+';
+            console.log (valor01);
 
          } else  if (boton.innerHTML == "-" ){
             console.log("restar");
+            valor01=operacionActual;
+            operacion== '-';
+            console.log (valor01);
+            
 
          } else  if (boton.innerHTML == "%" ){
             console.log("dividir");
+            valor01=operacionActual;
+            operacion== '/';
+            console.log (valor01);
 
          }else  if (boton.innerHTML == "x" ){
             console.log("Multiplicar");
+            valor01=operacionActual;
+            operacion== '*';
+            console.log (valor01);
+
+         }
+
+         else  if (boton.innerHTML == "=" ){
+            console.log("resultado");
+            valor02=operacionActual;
 
          }
     
@@ -66,6 +88,7 @@ botonOperacion.forEach(function (boton) {
 };
 
  botonBorrar.onclick = function() {
+   borrar();
     console.log("Borrar");
 };
 
@@ -80,13 +103,22 @@ botonBorrarUno.onclick = function() {
  function numeroIngresado (numero){
     operacionActual = operacionActual.toString() + numero.toString();
     console.log(operacionActual);
+   
+
     display();
 
  }
 
  function display(){
     resultadoActual.innerHTML = operacionActual;
+
     
+ }
+
+ function borrar (){
+   operacionActual = " ";
+   resultadoActual.innerHTML = operacionActual;
+   
  }
 
  
